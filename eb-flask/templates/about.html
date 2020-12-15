@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>About this project</h1>
+    <p><br></p>
+    <p>This model was created by <a href="https://www.linkedin.com/in/diogo-m-goncalves/">Diogo Maio Gon&ccedil;alves</a>, over an one week period as a final project for the <a href="https://www.ironhack.com/en">Ironhack</a> <a href="https://www.ironhack.com/en/data-analytics">Data Analytics Bootcamp</a>.</p>
+    <p>This model uses freely available <a href="https://www.imdb.com/interfaces/">IMDb Datasets</a> complemented with additional information scrapped from the individual movie pages. It contains all the american made movies since 1980, that after all the necessary data cleaning total 7062 titles.</p>
+    <p><img src="/static/distributionYear.PNG" alt="Total movies per year in my dataset"></p>
+    <p>The objective of this model is to predict what will be the financial outcome of a movie project. The outcomes are:</p>
+    <ol>
+        <li><strong>Flop:&nbsp;</strong>The movie has a ROI lower than -20%.</li>
+        <li><strong>Regular:&nbsp;</strong>The movies has a ROI between -20% and 100%</li>
+        <li><strong>Blockbuster:&nbsp;</strong>The movie has a ROI of over 100%</li>
+    </ol>
+    <p>It uses a <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes Classifier</a> to predict the outcome based on the story text, and takes that as an input, along with the other variables shown in the form interface, to run an <a href="https://en.wikipedia.org/wiki/Gradient_boosting">Extreme Gradient Boosting Classifier</a> to come up with the final prediction. &nbsp;</p>
+    <p>The created classifier has an<strong>&nbsp;accuracy of 76.5%</strong> on test data.</p>
+    <p>The classifier does a reasonable job at identifying all the real Blockbusters, as can be seen in the normalized <a href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>:</p>
+    <p><img src="/static/Normalized confusion matrix.PNG" alt="Normalized confusion matrix of the classifier"></p>
+{% endblock content %}
